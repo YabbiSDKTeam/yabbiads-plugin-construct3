@@ -2,34 +2,27 @@
 {
     const C3 = self.C3;
 
-    C3.Plugins.yabbi.Instance = class yabbiInstance extends C3.SDKInstanceBase
-    {
-        constructor(inst, properties)
-        {
+    C3.Plugins.yabbi.Instance = class yabbiInstance extends C3.SDKInstanceBase {
+        constructor(inst, properties) {
             super(inst);
 
-            if (typeof cordova == 'undefined')
-            {
+            if (typeof cordova == 'undefined') {
                 return;
             }
-            else
-            {};
+            else { };
 
             this.Conditions = C3.Plugins.yabbi.Cnds;
             this.YabbiAds = cordova.require('cordova.plugin.yabbiads');
 
-            if (properties)
-            {
+            if (properties) {
                 this.sdkKey = properties[0];
             }
 
 
-            if (typeof this.YabbiAds == 'undefined')
-            {
+            if (typeof this.YabbiAds == 'undefined') {
                 return;
             }
-            else
-            {};
+            else { };
 
             const self = this;
 
@@ -37,39 +30,39 @@
             ////// Methods
 
             // Settings
-           
-            const _initialize = async(sdkKey) => {
-               
+
+            const _initialize = async (sdkKey) => {
+
             }
 
             // Privacy Methods
 
             //If the user consents, set the user consent flag to true
-            const _setHasUserConsent = async(consent) => {
-             
+            const _setHasUserConsent = async (consent) => {
+
             }
             const _hasUserConsent = () => {
             };
 
             // Ads Methods
-            const _loadInterstitial = async(INTER_AD_UNIT_ID) => {
-                
+            const _loadInterstitial = async (INTER_AD_UNIT_ID) => {
+
             }
-            const _showInterstitial = async(INTER_AD_UNIT_ID) => {
-               
+            const _showInterstitial = async (INTER_AD_UNIT_ID) => {
+
             }
             const _isInterstitialReady = (INTER_AD_UNIT_ID) => {
-               
+
             }
 
-            const _loadRewardedAd = async(REWARDED_AD_UNIT_ID) => {
-               
+            const _loadRewardedAd = async (REWARDED_AD_UNIT_ID) => {
+
             }
-            const _showRewardedAd = async(REWARDED_AD_UNIT_ID) => {
-               
+            const _showRewardedAd = async (REWARDED_AD_UNIT_ID) => {
+
             }
             const _isRewardedAdReady = (REWARDED_AD_UNIT_ID) => {
-               
+
             }
 
 
@@ -90,40 +83,36 @@
             /////////////////////////////////////
             // Register Trigger Events
 
-            globalThis.addEventListener('OnInterstitialLoadedEvent', async(adInfo) => {
+            globalThis.addEventListener('OnInterstitialLoadedEvent', async (adInfo) => {
                 self.Trigger(self.Conditions.OnInterstitialLoaded);
             });
         }
 
         /////////////////////////////////////
 
-        Release()
-        {
+        Release() {
             super.Release();
         }
 
-        SaveToJson()
-        {
+        SaveToJson() {
             return {
                 // data to be saved for savegames
             };
         }
 
-        LoadFromJson(o)
-        {
+        LoadFromJson(o) {
             // load state for savegames
         }
 
 
-        GetDebuggerProperties()
-        {
+        GetDebuggerProperties() {
             return [
-            {
-                title: "yabbiads",
-                properties: [
-                    //{name: ".current-animation",	value: this._currentAnimation.GetName(),	onedit: v => this.CallAction(Acts.SetAnim, v, 0) },
-                ]
-            }];
+                {
+                    title: "yabbiads",
+                    properties: [
+                        //{name: ".current-animation",	value: this._currentAnimation.GetName(),	onedit: v => this.CallAction(Acts.SetAnim, v, 0) },
+                    ]
+                }];
         }
     };
 }
