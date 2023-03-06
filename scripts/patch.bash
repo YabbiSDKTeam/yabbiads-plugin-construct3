@@ -27,5 +27,6 @@ patchPluginJs() {
 }
 
 patchAddonJson && patchPluginJs &&
+rm -rf ./build/* &&
 zip -r ./build/yabbiads-$new_version.c3addon * -x build/\* &&
 echo "All done."
