@@ -1,12 +1,12 @@
 {
-  "languageTag": "ru-RU",
+  "languageTag": "en-US",
   "fileDescription": "Strings for yabbi Plugin",
   "text": {
     "plugins": {
       "yabbi": {
         "name": "yabbiads",
-        "description": "No Ad-Sharing  |  Fully Open Source  |  No Remote Control",
-        "help-url": "https://github.com/armandoalonso/c3IDE",
+        "description": "YabbiAds plugin for Construct 3",
+        "help-url": "https://github.com/YabbiSDKTeam/yabbiads-plugin-construct3/issues",
         "properties": {
           "sdk-key": {
             "name": "SDK Key",
