@@ -20,6 +20,7 @@
     "c3runtime/conditions.js",
     "c3runtime/actions.js",
     "lang/en-US.json",
+    "lang/ru-RU.json",
     "aces.json",
     "addon.json",
     "icon.svg",
