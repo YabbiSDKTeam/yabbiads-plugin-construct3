@@ -1,22 +1,28 @@
 "use strict";
 {
     self.C3.Plugins.yabbi.Acts = {
-        async Loadrewardedad(REWARDED_AD_UNIT_ID) {
+        async LoadRewardedAd() {
+            await this._loadRewardedAd();
         },
 
-        async Showrewardedad(REWARDED_AD_UNIT_ID) {
+        async LoadInterstitialAd() {
+            await this._loadInterstitialAd();
         },
 
-        async Showinterstitial(INTER_AD_UNIT_ID) {
+        async ShowRewardedAd() {
+            await this._showRewardedAd();
         },
 
-        async Loadinterstitial(INTER_AD_UNIT_ID) {
+        async ShowInterstitialAd() {
+            await this._showInterstitialAd();
         },
 
-        async Initialize(SDK_KEY) {
+        async Initialize(PUBLISHER_ID, INTERSTITIAL_ID, REWARDED_ID) {
+            await this._initialize(PUBLISHER_ID, INTERSTITIAL_ID, REWARDED_ID);
         },
 
-        async Sethasuserconsent(consent) {
-        },
+        async SetUserConsent(hasConsent) {
+            await this._setUserConsent(hasConsent);
+        }
     };
 }

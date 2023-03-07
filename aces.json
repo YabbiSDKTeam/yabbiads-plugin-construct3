@@ -2,44 +2,38 @@
   "rewarded ad": {
     "conditions": [
       {
-        "id": "OnRewardedAdReceivedReward",
-        "scriptName": "OnRewardedAdReceivedReward",
+        "id": "OnRewardedLoaded",
+        "scriptName": "OnRewardedLoaded",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnRewardedAdHidden",
-        "scriptName": "OnRewardedAdHidden",
+        "id": "OnRewardedClosed",
+        "scriptName": "OnRewardedClosed",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnRewardedAdFailedToDisplay",
-        "scriptName": "OnRewardedAdFailedToDisplay",
+        "id": "OnRewardedFinished",
+        "scriptName": "OnRewardedFinished",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnRewardedAdDisplayed",
-        "scriptName": "OnRewardedAdDisplayed",
+        "id": "OnRewardedShowFailed",
+        "scriptName": "OnRewardedShowFailed",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnRewardedAdClicked",
-        "scriptName": "OnRewardedAdClicked",
+        "id": "OnRewardedShown",
+        "scriptName": "OnRewardedShown",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnRewardedAdLoadFailed",
-        "scriptName": "OnRewardedAdLoadFailed",
-        "highlight": false,
-        "isTrigger": true
-      },
-      {
-        "id": "OnRewardedAdLoaded",
-        "scriptName": "OnRewardedAdLoaded",
+        "id": "OnRewardedLoadFailed",
+        "scriptName": "OnRewardedLoadFailed",
         "highlight": false,
         "isTrigger": true
       }
@@ -47,27 +41,15 @@
     "actions": [
       {
         "id": "loadRewardedAd",
-        "scriptName": "Loadrewardedad",
+        "scriptName": "LoadRewardedAd",
         "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "REWARDED_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
+        "isAsync": true
       },
       {
         "id": "showRewardedAd",
-        "scriptName": "Showrewardedad",
+        "scriptName": "ShowRewardedAd",
         "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "REWARDED_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
+        "isAsync": true
       }
     ],
     "expressions": []
@@ -87,76 +69,46 @@
         "isTrigger": true
       },
       {
-        "id": "OnInterstitialClicked",
-        "scriptName": "OnInterstitialClicked",
+        "id": "OnInterstitialShown",
+        "scriptName": "OnInterstitialShown",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnInterstitialDisplayed",
-        "scriptName": "OnInterstitialDisplayed",
+        "id": "OnInterstitialShowFailed",
+        "scriptName": "OnInterstitialShowFailed",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnInterstitialAdFailedToDisplay",
-        "scriptName": "OnInterstitialAdFailedToDisplay",
+        "id": "OnInterstitialClosed",
+        "scriptName": "OnInterstitialClosed",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnInterstitialHidden",
-        "scriptName": "OnInterstitialHidden",
-        "highlight": false,
-        "isTrigger": true
+        "id": "IsInterstitialReady",
+        "scriptName": "IsInterstitialReady",
+        "highlight": false
       },
       {
-        "id": "isInterstitialReady",
-        "scriptName": "isInterstitialReady",
-        "highlight": false,
-        "params": [
-          {
-            "id": "INTER_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
-      },
-      {
-        "id": "isRewardedAdReady",
-        "scriptName": "isRewardedAdReady",
-        "highlight": false,
-        "params": [
-          {
-            "id": "REWARDED_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
+        "id": "IsRewardedAdReady",
+        "scriptName": "IsRewardedAdReady",
+        "highlight": false
       }
     ],
     "actions": [
       {
         "id": "showInterstitial",
-        "scriptName": "Showinterstitial",
+        "scriptName": "ShowInterstitialAd",
         "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "INTER_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
+        "isAsync": true
       },
       {
         "id": "loadInterstitial",
-        "scriptName": "Loadinterstitial",
+        "scriptName": "LoadInterstitialAd",
         "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "INTER_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
+        "isAsync": true
       }
     ],
     "expressions": []
@@ -164,32 +116,40 @@
   "setting": {
     "conditions": [
       {
-        "id": "hasUserConsent",
-        "scriptName": "hasUserConsent",
+        "id": "HasUserConsent",
+        "scriptName": "HasUserConsent",
         "highlight": false
       }
     ],
     "actions": [
       {
-        "id": "initialize",
+        "id": "Initialize",
         "scriptName": "Initialize",
         "highlight": false,
         "isAsync": true,
         "params": [
           {
-            "id": "SDK_KEY",
+            "id": "PUBLISHER_ID",
+            "type": "string"
+          },
+          {
+            "id": "INTERSTITIAL_ID",
+            "type": "string"
+          },
+          {
+            "id": "REWARDED_ID",
             "type": "string"
           }
         ]
       },
       {
-        "id": "setHasUserConsent",
-        "scriptName": "Sethasuserconsent",
+        "id": "SetUserConsent",
+        "scriptName": "SetUserConsent",
         "highlight": false,
         "isAsync": true,
         "params": [
           {
-            "id": "consent",
+            "id": "hasConsent",
             "type": "combo",
             "items": [
               "true",

@@ -15,7 +15,7 @@
             this.YabbiAds = cordova.require('cordova.plugin.yabbiads');
 
             if (properties) {
-                this.sdkKey = properties[0];
+                // this.sdkKey = properties[0];
             }
 
 
@@ -30,38 +30,36 @@
             ////// Methods
 
             // Settings
-
-            const _initialize = async (sdkKey) => {
+            const _initialize = async (PUBLISHER_ID, INTERSTITIAL_ID, REWARDED_ID) => {
 
             }
 
             // Privacy Methods
 
             //If the user consents, set the user consent flag to true
-            const _setHasUserConsent = async (consent) => {
+            const _setUserConsent = async (hasConsent) => {
 
             }
             const _hasUserConsent = () => {
             };
 
             // Ads Methods
-            const _loadInterstitial = async (INTER_AD_UNIT_ID) => {
+            const _loadInterstitialAd = async () => {
 
             }
-            const _showInterstitial = async (INTER_AD_UNIT_ID) => {
+            const _showInterstitialAd = async () => {
 
             }
-            const _isInterstitialReady = (INTER_AD_UNIT_ID) => {
+            const _isInterstitialAdReady = () => {
 
             }
-
-            const _loadRewardedAd = async (REWARDED_AD_UNIT_ID) => {
-
-            }
-            const _showRewardedAd = async (REWARDED_AD_UNIT_ID) => {
+            const _loadRewardedAd = async () => {
 
             }
-            const _isRewardedAdReady = (REWARDED_AD_UNIT_ID) => {
+            const _showRewardedAd = async () => {
+
+            }
+            const _isRewardedAdReady = () => {
 
             }
 
@@ -70,11 +68,11 @@
             // Register Methods
 
             this._initialize = _initialize;
-            this._setHasUserConsent = _setHasUserConsent;
+            this._setUserConsent = _setUserConsent;
             this._hasUserConsent = _hasUserConsent;
-            this._loadInterstitial = _loadInterstitial;
-            this._showInterstitial = _showInterstitial;
-            this._isInterstitialReady = _isInterstitialReady;
+            this._loadInterstitialAd = _loadInterstitialAd;
+            this._showInterstitialAd = _showInterstitialAd;
+            this._isInterstitialAdReady = _isInterstitialAdReady;
             this._loadRewardedAd = _loadRewardedAd;
             this._showRewardedAd = _showRewardedAd;
             this._isRewardedAdReady = _isRewardedAdReady;
@@ -83,8 +81,41 @@
             /////////////////////////////////////
             // Register Trigger Events
 
-            globalThis.addEventListener('OnInterstitialLoadedEvent', async (adInfo) => {
+            // Interstitial Ad
+            globalThis.addEventListener('onInterstitialLoaded', async (adInfo) => {
                 self.Trigger(self.Conditions.OnInterstitialLoaded);
+            });
+            globalThis.addEventListener('onInterstitialLoadFailed', async (adInfo) => {
+                self.Trigger(self.Conditions.OnInterstitialLoadFailed);
+            });
+            globalThis.addEventListener('onInterstitialShown', async (adInfo) => {
+                self.Trigger(self.Conditions.OnInterstitialShown);
+            });
+            globalThis.addEventListener('onInterstitialShowFailed', async (adInfo) => {
+                self.Trigger(self.Conditions.OnInterstitialShowFailed);
+            });
+            globalThis.addEventListener('onInterstitialClosed', async (adInfo) => {
+                self.Trigger(self.Conditions.OnInterstitialClosed);
+            });
+
+            // Rewarded Ad
+            globalThis.addEventListener('onRewardedLoaded', async (adInfo) => {
+                self.Trigger(self.Conditions.OnRewardedLoaded);
+            });
+            globalThis.addEventListener('onRewardedLoadFailed', async (adInfo) => {
+                self.Trigger(self.Conditions.OnRewardedLoadFailed);
+            });
+            globalThis.addEventListener('onRewardedShown', async (adInfo) => {
+                self.Trigger(self.Conditions.OnRewardedShown);
+            });
+            globalThis.addEventListener('onRewardedShowFailed', async (adInfo) => {
+                self.Trigger(self.Conditions.OnRewardedShowFailed);
+            });
+            globalThis.addEventListener('onRewardedClosed', async (adInfo) => {
+                self.Trigger(self.Conditions.OnRewardedClosed);
+            });
+            globalThis.addEventListener('onRewardedFinished', async (adInfo) => {
+                self.Trigger(self.Conditions.OnRewardedFinished);
             });
         }
 

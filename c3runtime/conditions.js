@@ -2,31 +2,27 @@
 {
     self.C3.Plugins.yabbi.Cnds = {
 
-        OnRewardedAdReceivedReward() {
+        OnRewardedLoaded() {
             return true;
         },
 
-        OnRewardedAdHidden() {
+        OnRewardedClosed() {
             return true;
         },
 
-        OnRewardedAdFailedToDisplay() {
+        OnRewardedFinished() {
             return true;
         },
 
-        OnRewardedAdDisplayed() {
+        OnRewardedShowFailed() {
             return true;
         },
 
-        OnRewardedAdClicked() {
+        OnRewardedShown() {
             return true;
         },
 
-        OnRewardedAdLoadFailed() {
-            return true;
-        },
-
-        OnRewardedAdLoaded() {
+        OnRewardedLoadFailed() {
             return true;
         },
 
@@ -38,32 +34,28 @@
             return true;
         },
 
-        OnInterstitialClicked() {
+        OnInterstitialShown() {
             return true;
         },
 
-        OnInterstitialDisplayed() {
+        OnInterstitialShowFailed() {
             return true;
         },
 
-        OnInterstitialAdFailedToDisplay() {
+        OnInterstitialClosed() {
             return true;
         },
 
-        OnInterstitialHidden() {
-            return true;
+        IsInterstitialReady() {
+            return this._isInterstitialAdReady();
         },
 
-        isInterstitialReady(INTER_AD_UNIT_ID) {
-            return this._isInterstitialReady(INTER_AD_UNIT_ID);
+        IsRewardedAdReady() {
+            return this._isRewardedAdReady();
         },
 
-        isRewardedAdReady(REWARDED_AD_UNIT_ID) {
-            return this._isRewardedAdReady(REWARDED_AD_UNIT_ID);
-        },
-
-        hasUserConsent() {
+        HasUserConsent() {
             return this._hasUserConsent();
-        },
+        }
     };
 }
