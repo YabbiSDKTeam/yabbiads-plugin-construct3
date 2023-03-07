@@ -6,6 +6,10 @@
         constructor(inst, properties) {
             super(inst);
 
+            this.publisher_id = "";
+            this.interstitial_id = "";
+            this.rewarded_id = "";
+
             if (typeof cordova == 'undefined') {
                 return;
             }
@@ -15,7 +19,9 @@
             this.YabbiAds = cordova.require('cordova.plugin.yabbiads');
 
             if (properties) {
-                // this.sdkKey = properties[0];
+                this.publisher_id = properties[0];
+                this.interstitial_id = properties[1];
+                this.rewarded_id = properties[2];
             }
 
 
@@ -27,51 +33,58 @@
             const self = this;
 
             const AdType = {
-                INTERSTITIAL: 1, // Полноэкранная реклама
-                REWARDED: 3, // Полноэкранная реклама с вознаграждением
+                INTERSTITIAL: 1, // Interstitial Ad
+                REWARDED: 3, // Rewarded Ad
             };
 
-            /////////////////////////////////////
-            ////// Methods
+
+            // Methods
 
             // Settings
-            const _initialize = async (PUBLISHER_ID, INTERSTITIAL_ID, REWARDED_ID) => {
+            const _initialize = (PUBLISHER_ID, INTERSTITIAL_ID, REWARDED_ID) => {
 
+                var isInitialized = YabbiAds.isInitialized();
+
+                if (!isInitialized) {
+                    self.publisher_id = PUBLISHER_ID;
+                    self.interstitial_id = INTERSTITIAL_ID;
+                    self.rewarded_id = REWARDED_ID;
+                    YabbiAds.initialize(publisher_id, interstitial_id, rewarded_id);
+                }
             }
 
             // Privacy Methods
 
-            //If the user consents, set the user consent flag to true
-            const _setUserConsent = async (hasConsent) => {
-
+            const _setUserConsent = (hasConsent) => {
+                YabbiAds.setUserConsent(hasConsent);
             }
+
             const _hasUserConsent = () => {
+                return YabbiAds.hasUserConsent();
             };
 
             // Ads Methods
-            const _loadInterstitialAd = async () => {
-
+            const _loadInterstitialAd = () => {
+                YabbiAds.loadAd(AdType.INTERSTITIAL);
             }
-            const _showInterstitialAd = async () => {
-
+            const _showInterstitialAd = () => {
+                YabbiAds.showAd(AdType.INTERSTITIAL);
             }
             const _isInterstitialAdReady = () => {
-
+                return YabbiAds.canLoadAd(AdType.INTERSTITIAL);
             }
-            const _loadRewardedAd = async () => {
-
+            const _loadRewardedAd = () => {
+                YabbiAds.loadAd(AdType.REWARDED);
             }
-            const _showRewardedAd = async () => {
-
+            const _showRewardedAd = () => {
+                YabbiAds.showAd(AdType.REWARDED);
             }
             const _isRewardedAdReady = () => {
-
+                return YabbiAds.canLoadAd(AdType.REWARDED);
             }
 
 
-            /////////////////////////////////////
             // Register Methods
-
             this._initialize = _initialize;
             this._setUserConsent = _setUserConsent;
             this._hasUserConsent = _hasUserConsent;
@@ -83,72 +96,64 @@
             this._isRewardedAdReady = _isRewardedAdReady;
 
 
-            /////////////////////////////////////
             // Register Trigger Events
 
             // Interstitial Ad
-            globalThis.addEventListener('onInterstitialLoaded', async (adInfo) => {
+            globalThis.addEventListener('onInterstitialLoaded', (adInfo) => {
                 self.Trigger(self.Conditions.OnInterstitialLoaded);
             });
-            globalThis.addEventListener('onInterstitialLoadFailed', async (adInfo) => {
+            globalThis.addEventListener('onInterstitialLoadFailed', (adInfo) => {
                 self.Trigger(self.Conditions.OnInterstitialLoadFailed);
             });
-            globalThis.addEventListener('onInterstitialShown', async (adInfo) => {
+            globalThis.addEventListener('onInterstitialShown', (adInfo) => {
                 self.Trigger(self.Conditions.OnInterstitialShown);
             });
-            globalThis.addEventListener('onInterstitialShowFailed', async (adInfo) => {
+            globalThis.addEventListener('onInterstitialShowFailed', (adInfo) => {
                 self.Trigger(self.Conditions.OnInterstitialShowFailed);
             });
-            globalThis.addEventListener('onInterstitialClosed', async (adInfo) => {
+            globalThis.addEventListener('onInterstitialClosed', (adInfo) => {
                 self.Trigger(self.Conditions.OnInterstitialClosed);
             });
 
             // Rewarded Ad
-            globalThis.addEventListener('onRewardedLoaded', async (adInfo) => {
+            globalThis.addEventListener('onRewardedLoaded', (adInfo) => {
                 self.Trigger(self.Conditions.OnRewardedLoaded);
             });
-            globalThis.addEventListener('onRewardedLoadFailed', async (adInfo) => {
+            globalThis.addEventListener('onRewardedLoadFailed', (adInfo) => {
                 self.Trigger(self.Conditions.OnRewardedLoadFailed);
             });
-            globalThis.addEventListener('onRewardedShown', async (adInfo) => {
+            globalThis.addEventListener('onRewardedShown', (adInfo) => {
                 self.Trigger(self.Conditions.OnRewardedShown);
             });
-            globalThis.addEventListener('onRewardedShowFailed', async (adInfo) => {
+            globalThis.addEventListener('onRewardedShowFailed', (adInfo) => {
                 self.Trigger(self.Conditions.OnRewardedShowFailed);
             });
-            globalThis.addEventListener('onRewardedClosed', async (adInfo) => {
+            globalThis.addEventListener('onRewardedClosed', (adInfo) => {
                 self.Trigger(self.Conditions.OnRewardedClosed);
             });
-            globalThis.addEventListener('onRewardedFinished', async (adInfo) => {
+            globalThis.addEventListener('onRewardedFinished', (adInfo) => {
                 self.Trigger(self.Conditions.OnRewardedFinished);
             });
         }
-
-        /////////////////////////////////////
 
         Release() {
             super.Release();
         }
 
         SaveToJson() {
-            return {
-                // data to be saved for savegames
-            };
+            return {};
         }
 
-        LoadFromJson(o) {
-            // load state for savegames
-        }
+        LoadFromJson(o) { }
 
 
         GetDebuggerProperties() {
             return [
                 {
                     title: "Yabbiads",
-                    properties: [
-                        //{name: ".current-animation",	value: this._currentAnimation.GetName(),	onedit: v => this.CallAction(Acts.SetAnim, v, 0) },
-                    ]
-                }];
+                    properties: []
+                }
+            ];
         }
     };
 }

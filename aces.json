@@ -47,14 +47,12 @@
       {
         "id": "LoadRewardedAd",
         "scriptName": "LoadRewardedAd",
-        "highlight": false,
-        "isAsync": true
+        "highlight": false
       },
       {
         "id": "ShowRewardedAd",
         "scriptName": "ShowRewardedAd",
-        "highlight": false,
-        "isAsync": true
+        "highlight": false
       }
     ],
     "expressions": []
@@ -101,14 +99,12 @@
       {
         "id": "ShowInterstitialAd",
         "scriptName": "ShowInterstitialAd",
-        "highlight": false,
-        "isAsync": true
+        "highlight": false
       },
       {
         "id": "LoadInterstitialAd",
         "scriptName": "LoadInterstitialAd",
-        "highlight": false,
-        "isAsync": true
+        "highlight": false
       }
     ],
     "expressions": []
@@ -126,7 +122,6 @@
         "id": "Initialize",
         "scriptName": "Initialize",
         "highlight": false,
-        "isAsync": true,
         "params": [
           {
             "id": "PUBLISHER_ID",
@@ -146,7 +141,6 @@
         "id": "SetUserConsent",
         "scriptName": "SetUserConsent",
         "highlight": false,
-        "isAsync": true,
         "params": [
           {
             "id": "hasConsent",
