@@ -26,6 +26,11 @@
 
             const self = this;
 
+            const AdType = {
+                INTERSTITIAL: 1, // Полноэкранная реклама
+                REWARDED: 3, // Полноэкранная реклама с вознаграждением
+            };
+
             /////////////////////////////////////
             ////// Methods
 
@@ -139,7 +144,7 @@
         GetDebuggerProperties() {
             return [
                 {
-                    title: "yabbiads",
+                    title: "Yabbiads",
                     properties: [
                         //{name: ".current-animation",	value: this._currentAnimation.GetName(),	onedit: v => this.CallAction(Acts.SetAnim, v, 0) },
                     ]
