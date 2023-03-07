@@ -36,17 +36,22 @@
         "scriptName": "OnRewardedLoadFailed",
         "highlight": false,
         "isTrigger": true
+      },
+      {
+        "id": "IsRewardedAdReady",
+        "scriptName": "IsRewardedAdReady",
+        "highlight": false
       }
     ],
     "actions": [
       {
-        "id": "loadRewardedAd",
+        "id": "LoadRewardedAd",
         "scriptName": "LoadRewardedAd",
         "highlight": false,
         "isAsync": true
       },
       {
-        "id": "showRewardedAd",
+        "id": "ShowRewardedAd",
         "scriptName": "ShowRewardedAd",
         "highlight": false,
         "isAsync": true
@@ -90,22 +95,17 @@
         "id": "IsInterstitialReady",
         "scriptName": "IsInterstitialReady",
         "highlight": false
-      },
-      {
-        "id": "IsRewardedAdReady",
-        "scriptName": "IsRewardedAdReady",
-        "highlight": false
       }
     ],
     "actions": [
       {
-        "id": "showInterstitial",
+        "id": "ShowInterstitialAd",
         "scriptName": "ShowInterstitialAd",
         "highlight": false,
         "isAsync": true
       },
       {
-        "id": "loadInterstitial",
+        "id": "LoadInterstitialAd",
         "scriptName": "LoadInterstitialAd",
         "highlight": false,
         "isAsync": true

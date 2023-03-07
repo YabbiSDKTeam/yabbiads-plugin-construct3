@@ -1,154 +1,154 @@
 {
   "languageTag": "en-US",
-  "fileDescription": "Strings for YabbiAds Plugin",
+  "fileDescription": "Translation for YabbiAds",
   "text": {
     "plugins": {
       "yabbi": {
-        "name": "yabbiads",
-        "description": "YabbiAds plugin for Construct 3",
+        "name": "YabbiAds",
+        "description": "YabbiAds addon for Construct 3",
         "help-url": "https://github.com/YabbiSDKTeam/yabbiads-plugin-construct3/issues",
         "properties": {
           "publisher-id": {
             "name": "Publisher ID",
-            "desc": "SDK Key is a unique identifier for your YabbiAds account."
+            "desc": "Publisher ID. Required"
           },
           "interstitial-id": {
             "name": "Interstitial ID",
-            "desc": "SDK Key is a unique identifier for your YabbiAds account."
+            "desc": "Interstitial Ad ID. May be an empty string"
           },
           "rewarded-id": {
             "name": "Rewarded ID",
-            "desc": "SDK Key is a unique identifier for your YabbiAds account."
+            "desc": "Rewarded Ad ID. May be an empty string"
           }
         },
         "aceCategories": {
-          "interstitial ad": "interstitial ad",
-          "rewarded ad": "rewarded ad",
-          "setting": "setting"
+          "interstitial ad": "Interstitial Ad",
+          "rewarded ad": "Rewarded Ad",
+          "setting": "Settings"
         },
         "conditions": {
           "OnRewardedLoaded": {
-            "list-name": "On rewarded ad received reward",
-            "display-text": "On rewarded ad received reward",
-            "description": "Received rewarded."
+            "list-name": "OnRewardedLoaded",
+            "display-text": "OnRewardedLoaded",
+            "description": "Called when the ad is loaded"
           },
           "OnRewardedClosed": {
-            "list-name": "On rewarded ad Hide",
-            "display-text": "On rewarded ad hide",
-            "description": "this On rewarded ad Hide"
+            "list-name": "OnRewardedClosed",
+            "display-text": "OnRewardedClosed",
+            "description": "Called when the ad is closed"
           },
           "OnRewardedFinished": {
-            "list-name": "On rewarded ad finished",
-            "display-text": "On rewarded ad finished",
-            "description": "this On rewarded ad finished"
+            "list-name": "OnRewardedFinished",
+            "display-text": "OnRewardedFinished",
+            "description": "Called when the ad has ended"
           },
           "OnRewardedShowFailed": {
-            "list-name": "On rewarded ad Display Fail",
-            "display-text": "On rewarded ad Display Fail",
-            "description": "Rewarded ad failed to display. We recommend loading the next ad."
+            "list-name": "OnRewardedShowFailed",
+            "display-text": "OnRewardedShowFailed",
+            "description": "Called if an error occurred while displaying the ad"
           },
           "OnRewardedShown": {
-            "list-name": "On rewarded ad Display",
-            "display-text": "On rewarded ad Display",
-            "description": "this On rewarded ad Display"
+            "list-name": "OnRewardedShown",
+            "display-text": "OnRewardedShown",
+            "description": "Called when an ad has started"
           },
           "OnRewardedLoadFailed": {
-            "list-name": "On rewarded ad Load Fail",
-            "display-text": "On rewarded ad Load Fail",
-            "description": "An Event trigger response when an rewarded ad request failed. We recommend retrying with exponentially higher delays up to a maximum delay (in this case 64 seconds)"
+            "list-name": "OnRewardedLoadFailed",
+            "display-text": "OnRewardedLoadFailed",
+            "description": "Called if an error occurred while loading the ad"
           },
           "OnInterstitialLoaded": {
-            "list-name": "On interstitial Load",
-            "display-text": "On interstitial Load",
-            "description": "An Event trigger response when an interstitial ad has finished loading. Interstitial ad is ready to be shown. IsInterstitialReady(INTER_AD_UNIT_ID) will now return true"
+            "list-name": "OnInterstitialLoaded",
+            "display-text": "OnInterstitialLoaded",
+            "description": "Called when the ad is loaded"
           },
           "OnInterstitialLoadFailed": {
-            "list-name": "On interstitial Load Fail",
-            "display-text": "On interstitial Load Fail",
-            "description": "An Event trigger response when an interstitial ad request failed. We recommend retrying with exponentially higher delays up to a maximum delay (in this case 64 seconds)"
+            "list-name": "OnInterstitialLoadFailed",
+            "display-text": "OnInterstitialLoadFailed",
+            "description": "Called if an error occurred while loading the ad"
           },
           "OnInterstitialShown": {
-            "list-name": "On interstitial Display",
-            "display-text": "On interstitial Display",
-            "description": "this On interstitial Display"
+            "list-name": "OnInterstitialShown",
+            "display-text": "OnInterstitialShown",
+            "description": "Called when an ad has started"
           },
           "OnInterstitialShowFailed": {
-            "list-name": "On interstitial Display Fail",
-            "display-text": "On interstitial Display Fail",
-            "description": "Interstitial ad failed to display. We recommend loading the next ad"
+            "list-name": "OnInterstitialShowFailed",
+            "display-text": "OnInterstitialShowFailed",
+            "description": "Called if an error occurred while displaying the ad"
           },
           "OnInterstitialClosed": {
-            "list-name": "On interstitial Hidden",
-            "display-text": "On interstitial Hidden",
-            "description": "this On interstitial Hidden"
+            "list-name": "OnInterstitialClosed",
+            "display-text": "OnInterstitialClosed",
+            "description": "Called when the ad is closed"
           },
           "IsInterstitialReady": {
-            "list-name": "Is Interstitial Ready",
-            "display-text": "Is Interstitial Ready",
-            "description": "Check Interstitial ad is ready to be shown."
+            "list-name": "IsInterstitialReady",
+            "display-text": "IsInterstitialReady",
+            "description": "Check if the ad is ready to show"
           },
           "IsRewardedAdReady": {
-            "list-name": "Is Rewarded Ad Ready",
-            "display-text": "Is Rewarded Ad Ready",
-            "description": "Check Rewarded Ad ad is ready to be shown."
+            "list-name": "IsRewardedAdReady",
+            "display-text": "IsRewardedAdReady",
+            "description": "Check if the ad is ready to show"
           },
           "HasUserConsent": {
-            "list-name": "Has user consent",
-            "display-text": "Has user consent",
-            "description": "Check if has user consent."
+            "list-name": "HasUserConsent",
+            "display-text": "HasUserConsent",
+            "description": "Check that the user has given permission to collect data"
           }
         },
         "actions": {
-          "loadRewardedAd": {
-            "list-name": "Rewarded Ad load",
-            "display-text": "Rewarded Ad load.",
-            "description": "Load an Rewarded ad to be shown."
+          "LoadRewardedAd": {
+            "list-name": "LoadRewardedAd",
+            "display-text": "LoadRewardedAd",
+            "description": "Load Rewarded Full Screen Ads"
           },
-          "showRewardedAd": {
-            "list-name": "Rewarded Ad show",
-            "display-text": "Rewarded Ad show.",
-            "description": "Show a loaded Rewarded ad."
+          "ShowRewardedAd": {
+            "list-name": "ShowRewardedAd",
+            "display-text": "ShowRewardedAd",
+            "description": "Show Rewarded Full Screen Ads"
           },
-          "showInterstitial": {
-            "list-name": "Interstitial Ad show",
-            "display-text": "Interstitial Ad show.",
-            "description": "Show a loaded interstitial ad."
+          "ShowInterstitialAd": {
+            "list-name": "ShowInterstitialAd",
+            "display-text": "ShowInterstitialAd",
+            "description": "Show Full Screen Ads"
           },
-          "loadInterstitial": {
-            "list-name": "Interstitial Ad load",
-            "display-text": "Interstitial Ad load.",
-            "description": "Load an interstitial ad to be shown."
+          "LoadInterstitialAd": {
+            "list-name": "LoadInterstitialAd",
+            "display-text": "LoadInterstitialAd",
+            "description": "Load Full Screen Ads"
           },
           "Initialize": {
-            "list-name": "Initialize addon",
-            "display-text": "Initialize addon",
-            "description": "Initialize addon",
+            "list-name": "Initialize",
+            "display-text": "Initialize",
+            "description": "Addon initialization",
             "params": {
               "PUBLISHER_ID": {
-                "name": "PUBLISHER ID",
-                "desc": "Set this to the sdk key"
+                "name": "Publisher ID",
+                "desc": "Publisher ID. Required"
               },
               "INTERSTITIAL_ID": {
-                "name": "INTERSTITIAL ID",
-                "desc": "Set this to the sdk key"
+                "name": "Interstitial ID",
+                "desc": "Interstitial Ad ID. May be an empty string"
               },
               "REWARDED_ID": {
-                "name": "REWARDED ID",
-                "desc": "Set this to the sdk key"
+                "name": "Rewarded ID",
+                "desc": "Rewarded Ad ID. May be an empty string"
               }
             }
           },
           "SetUserConsent": {
-            "list-name": "User consent",
-            "display-text": "User consent",
-            "description": "Set user consent.",
+            "list-name": "SetUserConsent",
+            "display-text": "SetUserConsent",
+            "description": "Set user consent to data collection",
             "params": {
               "hasConsent": {
-                "name": "User Consent :",
-                "desc": "If the user consents, set the user consent flag to Enable.",
+                "name": "Permission",
+                "desc": "If the user has given consent, set the flag to \"Allowed\"",
                 "items": {
-                  "true": "Enabled",
-                  "false": "Disabled"
+                  "true": "Allowed",
+                  "false": "Refused"
                 }
               }
             }

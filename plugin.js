@@ -3,7 +3,7 @@
     const SDK = self.SDK;
 
     const PLUGIN_ID = "yabbi";
-    const PLUGIN_VERSION = "1.0.0";
+    const PLUGIN_VERSION = "1.0.1";
     const PLUGIN_CATEGORY = "monetisation";
 
     const PLUGIN_CLASS = SDK.Plugins.yabbi = class yabbiPlugin extends SDK.IPluginBase {

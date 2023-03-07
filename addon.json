@@ -3,7 +3,7 @@
   "type": "plugin",
   "name": "YabbiAds",
   "id": "yabbi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Yabbi, LLC",
   "website": "https://github.com/YabbiSDKTeam/yabbiads-plugin-construct3",
   "documentation": "https://github.com/YabbiSDKTeam/yabbiads-plugin-construct3/blob/master/README.md",
