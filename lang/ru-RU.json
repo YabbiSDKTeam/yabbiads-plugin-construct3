@@ -82,9 +82,9 @@
             "display-text": "OnInterstitialClosed",
             "description": "Вызывается когда реклама закрыта"
           },
-          "IsInterstitialReady": {
-            "list-name": "IsInterstitialReady",
-            "display-text": "IsInterstitialReady",
+          "IsInterstitialAdReady": {
+            "list-name": "IsInterstitialAdReady",
+            "display-text": "IsInterstitialAdReady",
             "description": "Проверить, что реклама готова к показу"
           },
           "IsRewardedAdReady": {
@@ -109,6 +109,11 @@
             "display-text": "ShowRewardedAd",
             "description": "Показать полноэкранную рекламу с вознаграждением"
           },
+          "DestroyRewardedAd": {
+            "list-name": "DestroyRewardedAd",
+            "display-text": "DestroyRewardedAd",
+            "description": "Уничтожить полноэкранную рекламу с вознаграждением"
+          },
           "ShowInterstitialAd": {
             "list-name": "ShowInterstitialAd",
             "display-text": "ShowInterstitialAd",
@@ -118,6 +123,11 @@
             "list-name": "LoadInterstitialAd",
             "display-text": "LoadInterstitialAd",
             "description": "Загрузить полноэкранную рекламу"
+          },
+          "DestroyInterstitialAd": {
+            "list-name": "DestroyInterstitialAd",
+            "display-text": "DestroyInterstitialAd",
+            "description": "Уничтожить полноэкранную рекламу"
           },
           "Initialize": {
             "list-name": "Initialize",

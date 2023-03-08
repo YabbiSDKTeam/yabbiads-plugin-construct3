@@ -53,6 +53,11 @@
         "id": "ShowRewardedAd",
         "scriptName": "ShowRewardedAd",
         "highlight": false
+      },
+      {
+        "id": "DestroyRewardedAd",
+        "scriptName": "DestroyRewardedAd",
+        "highlight": false
       }
     ],
     "expressions": []
@@ -90,8 +95,8 @@
         "isTrigger": true
       },
       {
-        "id": "IsInterstitialReady",
-        "scriptName": "IsInterstitialReady",
+        "id": "IsInterstitialAdReady",
+        "scriptName": "IsInterstitialAdReady",
         "highlight": false
       }
     ],
@@ -104,6 +109,11 @@
       {
         "id": "LoadInterstitialAd",
         "scriptName": "LoadInterstitialAd",
+        "highlight": false
+      },
+      {
+        "id": "DestroyInterstitialAd",
+        "scriptName": "DestroyInterstitialAd",
         "highlight": false
       }
     ],

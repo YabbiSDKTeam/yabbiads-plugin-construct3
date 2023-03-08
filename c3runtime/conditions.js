@@ -46,7 +46,7 @@
             return true;
         },
 
-        IsInterstitialReady() {
+        IsInterstitialAdReady() {
             return this._isInterstitialAdReady();
         },
 

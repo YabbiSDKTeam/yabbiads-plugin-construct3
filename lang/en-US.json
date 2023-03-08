@@ -82,9 +82,9 @@
             "display-text": "OnInterstitialClosed",
             "description": "Called when the ad is closed"
           },
-          "IsInterstitialReady": {
-            "list-name": "IsInterstitialReady",
-            "display-text": "IsInterstitialReady",
+          "IsInterstitialAdReady": {
+            "list-name": "IsInterstitialAdReady",
+            "display-text": "IsInterstitialAdReady",
             "description": "Check if the ad is ready to show"
           },
           "IsRewardedAdReady": {
@@ -109,6 +109,11 @@
             "display-text": "ShowRewardedAd",
             "description": "Show Rewarded Full Screen Ads"
           },
+          "DestroyRewardedAd": {
+            "list-name": "DestroyRewardedAd",
+            "display-text": "DestroyRewardedAd",
+            "description": "Destroy Rewarded Full Screen Ads"
+          },
           "ShowInterstitialAd": {
             "list-name": "ShowInterstitialAd",
             "display-text": "ShowInterstitialAd",
@@ -118,6 +123,11 @@
             "list-name": "LoadInterstitialAd",
             "display-text": "LoadInterstitialAd",
             "description": "Load Full Screen Ads"
+          },
+          "DestroyInterstitialAd": {
+            "list-name": "DestroyInterstitialAd",
+            "display-text": "DestroyInterstitialAd",
+            "description": "Destroy Rewarded Full Screen Ads"
           },
           "Initialize": {
             "list-name": "Initialize",

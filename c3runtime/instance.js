@@ -73,11 +73,17 @@
             const _isInterstitialAdReady = () => {
                 return YabbiAds.canLoadAd(AdType.INTERSTITIAL);
             }
+            const _destroyInterstitialAd = () => {
+                YabbiAds.destroyAd(AdType.INTERSTITIAL);
+            }
             const _loadRewardedAd = () => {
                 YabbiAds.loadAd(AdType.REWARDED);
             }
             const _showRewardedAd = () => {
                 YabbiAds.showAd(AdType.REWARDED);
+            }
+            const _destroyRewardedAd = () => {
+                YabbiAds.destroyAd(AdType.REWARDED);
             }
             const _isRewardedAdReady = () => {
                 return YabbiAds.canLoadAd(AdType.REWARDED);
@@ -93,6 +99,8 @@
             this._isInterstitialAdReady = _isInterstitialAdReady;
             this._loadRewardedAd = _loadRewardedAd;
             this._showRewardedAd = _showRewardedAd;
+            this._destroyInterstitialAd = _destroyInterstitialAd;
+            this._destroyRewardedAd = _destroyRewardedAd;
             this._isRewardedAdReady = _isRewardedAdReady;
 
 

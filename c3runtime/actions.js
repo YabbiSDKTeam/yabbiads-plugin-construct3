@@ -1,20 +1,29 @@
 "use strict";
 {
     self.C3.Plugins.yabbi.Acts = {
-        LoadRewardedAd() {
-            this._loadRewardedAd();
-        },
 
         LoadInterstitialAd() {
             this._loadInterstitialAd();
+        },
+
+        ShowInterstitialAd() {
+            this._showInterstitialAd();
+        },
+
+        DestroyInterstitialAd() {
+            this._destroyInterstitialAd();
+        },
+
+        LoadRewardedAd() {
+            this._loadRewardedAd();
         },
 
         ShowRewardedAd() {
             this._showRewardedAd();
         },
 
-        ShowInterstitialAd() {
-            this._showInterstitialAd();
+        DestroyRewardedAd() {
+            this._destroyRewardedAd();
         },
 
         Initialize(PUBLISHER_ID, INTERSTITIAL_ID, REWARDED_ID) {
