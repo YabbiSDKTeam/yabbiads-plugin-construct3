@@ -1,164 +1,164 @@
 {
-  "languageTag": "ru-RU",
-  "fileDescription": "Русификация для YabbiAds",
+  "languageTag": "en-US",
+  "fileDescription": "Translation for YabbiAds",
   "text": {
     "plugins": {
       "yabbi": {
         "name": "YabbiAds",
-        "description": "YabbiAds плагин для Construct 3",
+        "description": "YabbiAds addon for Construct 3",
         "help-url": "https://github.com/YabbiSDKTeam/yabbiads-plugin-construct3/issues",
         "properties": {
           "publisher-id": {
             "name": "Publisher ID",
-            "desc": "Идентификатор издателя. Обязателен для заполнения."
+            "desc": "Publisher ID. Required"
           },
           "interstitial-id": {
             "name": "Interstitial ID",
-            "desc": "Идентификатор полноэкранной рекламы. Может оставаться пустой строкой."
+            "desc": "Interstitial Ad ID. May be an empty string"
           },
           "rewarded-id": {
             "name": "Rewarded ID",
-            "desc": "Идентификатор полноэкранной рекламы с вознаграждением. Может оставаться пустой строкой."
+            "desc": "Rewarded Ad ID. May be an empty string"
           }
         },
         "aceCategories": {
-          "interstitial ad": "Полноэкранная реклама",
-          "rewarded ad": "Полноэкранная реклама с вознаграждением",
-          "setting": "Настройка"
+          "interstitial ad": "Interstitial Ad",
+          "rewarded ad": "Rewarded Ad",
+          "setting": "Settings"
         },
         "conditions": {
           "OnRewardedLoaded": {
             "list-name": "OnRewardedLoaded",
             "display-text": "OnRewardedLoaded",
-            "description": "Вызывается когда реклама с загружена"
+            "description": "Called when the ad is loaded"
           },
           "OnRewardedClosed": {
             "list-name": "OnRewardedClosed",
             "display-text": "OnRewardedClosed",
-            "description": "Вызывается когда реклама закрыта"
+            "description": "Called when the ad is closed"
           },
           "OnRewardedFinished": {
             "list-name": "OnRewardedFinished",
             "display-text": "OnRewardedFinished",
-            "description": "Вызывается когда реклама закончилась"
+            "description": "Called when the ad has ended"
           },
           "OnRewardedShowFailed": {
             "list-name": "OnRewardedShowFailed",
             "display-text": "OnRewardedShowFailed",
-            "description": "Вызывается если при показе рекламы произошла ошибка"
+            "description": "Called if an error occurred while displaying the ad"
           },
           "OnRewardedShown": {
             "list-name": "OnRewardedShown",
             "display-text": "OnRewardedShown",
-            "description": "Вызывается когда начался показ рекламы"
+            "description": "Called when an ad has started"
           },
           "OnRewardedLoadFailed": {
             "list-name": "OnRewardedLoadFailed",
             "display-text": "OnRewardedLoadFailed",
-            "description": "Вызывается если в загрузке рекламы произошла ошибка"
+            "description": "Called if an error occurred while loading the ad"
           },
           "OnInterstitialLoaded": {
             "list-name": "OnInterstitialLoaded",
             "display-text": "OnInterstitialLoaded",
-            "description": "Вызывается когда реклама с загружена"
+            "description": "Called when the ad is loaded"
           },
           "OnInterstitialLoadFailed": {
             "list-name": "OnInterstitialLoadFailed",
             "display-text": "OnInterstitialLoadFailed",
-            "description": "Вызывается если в загрузке рекламы произошла ошибка"
+            "description": "Called if an error occurred while loading the ad"
           },
           "OnInterstitialShown": {
             "list-name": "OnInterstitialShown",
             "display-text": "OnInterstitialShown",
-            "description": "Вызывается когда начался показ рекламы"
+            "description": "Called when an ad has started"
           },
           "OnInterstitialShowFailed": {
             "list-name": "OnInterstitialShowFailed",
             "display-text": "OnInterstitialShowFailed",
-            "description": "Вызывается если при показе рекламы произошла ошибка"
+            "description": "Called if an error occurred while displaying the ad"
           },
           "OnInterstitialClosed": {
             "list-name": "OnInterstitialClosed",
             "display-text": "OnInterstitialClosed",
-            "description": "Вызывается когда реклама закрыта"
+            "description": "Called when the ad is closed"
           },
           "IsInterstitialAdReady": {
             "list-name": "IsInterstitialAdReady",
             "display-text": "IsInterstitialAdReady",
-            "description": "Проверить, что реклама готова к показу"
+            "description": "Check if the ad is ready to show"
           },
           "IsRewardedAdReady": {
             "list-name": "IsRewardedAdReady",
             "display-text": "IsRewardedAdReady",
-            "description": "Проверить, что реклама готова к показу"
+            "description": "Check if the ad is ready to show"
           },
           "HasUserConsent": {
             "list-name": "HasUserConsent",
             "display-text": "HasUserConsent",
-            "description": "Проверить, что пользователь дал разрешение на сбор данных"
+            "description": "Check that the user has given permission to collect data"
           }
         },
         "actions": {
           "LoadRewardedAd": {
             "list-name": "LoadRewardedAd",
             "display-text": "LoadRewardedAd",
-            "description": "Загрузить полноэкранную рекламу с вознаграждением"
+            "description": "Load Rewarded Full Screen Ads"
           },
           "ShowRewardedAd": {
             "list-name": "ShowRewardedAd",
             "display-text": "ShowRewardedAd",
-            "description": "Показать полноэкранную рекламу с вознаграждением"
+            "description": "Show Rewarded Full Screen Ads"
           },
           "DestroyRewardedAd": {
             "list-name": "DestroyRewardedAd",
             "display-text": "DestroyRewardedAd",
-            "description": "Уничтожить полноэкранную рекламу с вознаграждением"
+            "description": "Destroy Rewarded Full Screen Ads"
           },
           "ShowInterstitialAd": {
             "list-name": "ShowInterstitialAd",
             "display-text": "ShowInterstitialAd",
-            "description": "Показать полноэкранную рекламу"
+            "description": "Show Full Screen Ads"
           },
           "LoadInterstitialAd": {
             "list-name": "LoadInterstitialAd",
             "display-text": "LoadInterstitialAd",
-            "description": "Загрузить полноэкранную рекламу"
+            "description": "Load Full Screen Ads"
           },
           "DestroyInterstitialAd": {
             "list-name": "DestroyInterstitialAd",
             "display-text": "DestroyInterstitialAd",
-            "description": "Уничтожить полноэкранную рекламу"
+            "description": "Destroy Rewarded Full Screen Ads"
           },
           "Initialize": {
             "list-name": "Initialize",
             "display-text": "Initialize",
-            "description": "Инициализация аддона",
+            "description": "Addon initialization",
             "params": {
               "PUBLISHER_ID": {
                 "name": "Publisher ID",
-                "desc": "Идентификатор издателя. Обязателен для заполнения"
+                "desc": "Publisher ID. Required"
               },
               "INTERSTITIAL_ID": {
                 "name": "Interstitial ID",
-                "desc": "Идентификатор полноэкранной рекламы. Может оставаться пустой строкой"
+                "desc": "Interstitial Ad ID. May be an empty string"
               },
               "REWARDED_ID": {
                 "name": "Rewarded ID",
-                "desc": "Идентификатор полноэкранной рекламы с вознаграждением. Может оставаться пустой строкой"
+                "desc": "Rewarded Ad ID. May be an empty string"
               }
             }
           },
           "SetUserConsent": {
             "list-name": "SetUserConsent",
             "display-text": "SetUserConsent",
-            "description": "Установить согласие пользователя на сбор данных",
+            "description": "Set user consent to data collection",
             "params": {
               "hasConsent": {
-                "name": "Разрешение",
-                "desc": "Если пользователь дал согласие, установите флаг в \"Разрешил\"",
+                "name": "Permission",
+                "desc": "If the user has given consent, set the flag to \"Allowed\"",
                 "items": {
-                  "true": "Разрешил",
-                  "false": "Отказался"
+                  "true": "Allowed",
+                  "false": "Refused"
                 }
               }
             }

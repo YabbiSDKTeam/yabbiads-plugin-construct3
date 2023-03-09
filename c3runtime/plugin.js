@@ -2,15 +2,12 @@
 {
     const C3 = self.C3;
 
-    C3.Plugins.yabbi = class yabbiPlugin extends C3.SDKPluginBase
-    {
-        constructor(opts)
-        {
+    C3.Plugins.yabbi = class yabbiPlugin extends C3.SDKPluginBase {
+        constructor(opts) {
             super(opts);
         }
 
-        Release()
-        {
+        Release() {
             super.Release();
         }
     };

@@ -1,178 +1,63 @@
 {
-  "banner ad": {
-    "conditions": [
-      {
-        "id": "OnBannerAdLoaded",
-        "scriptName": "OnBannerAdLoaded",
-        "highlight": false,
-        "isTrigger": true
-      },
-      {
-        "id": "OnBannerAdLoadFailed",
-        "scriptName": "OnBannerAdLoadFailed",
-        "highlight": false,
-        "isTrigger": true
-      },
-      {
-        "id": "OnBannerAdClicked",
-        "scriptName": "OnBannerAdClicked",
-        "highlight": false,
-        "isTrigger": true
-      },
-      {
-        "id": "OnBannerAdCollapsed",
-        "scriptName": "OnBannerAdCollapsed",
-        "highlight": false,
-        "isTrigger": true
-      },
-      {
-        "id": "OnBannerAdExpanded",
-        "scriptName": "OnBannerAdExpanded",
-        "highlight": false,
-        "isTrigger": true
-      }
-    ],
-    "actions": [
-      {
-        "id": "setBannerBackgroundColor",
-        "scriptName": "Setbannerbackgroundcolor",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "BANNER_AD_UNIT_ID",
-            "type": "string"
-          },
-          {
-            "id": "backgroundColor",
-            "type": "string"
-          }
-        ]
-      },
-      {
-        "id": "createBanner",
-        "scriptName": "Createbanner",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "BANNER_AD_UNIT_ID",
-            "type": "string"
-          },
-          {
-            "id": "position",
-            "type": "string"
-          }
-        ]
-      },
-      {
-        "id": "hideBanner",
-        "scriptName": "Hidebanner",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "BANNER_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
-      },
-      {
-        "id": "showBanner",
-        "scriptName": "Showbanner",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "BANNER_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
-      },
-      {
-        "id": "destroyBanner",
-        "scriptName": "Destroybanner",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "BANNER_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
-      }
-    ],
-    "expressions": []
-  },
   "rewarded ad": {
     "conditions": [
       {
-        "id": "OnRewardedAdReceivedReward",
-        "scriptName": "OnRewardedAdReceivedReward",
+        "id": "OnRewardedLoaded",
+        "scriptName": "OnRewardedLoaded",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnRewardedAdHidden",
-        "scriptName": "OnRewardedAdHidden",
+        "id": "OnRewardedClosed",
+        "scriptName": "OnRewardedClosed",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnRewardedAdFailedToDisplay",
-        "scriptName": "OnRewardedAdFailedToDisplay",
+        "id": "OnRewardedFinished",
+        "scriptName": "OnRewardedFinished",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnRewardedAdDisplayed",
-        "scriptName": "OnRewardedAdDisplayed",
+        "id": "OnRewardedShowFailed",
+        "scriptName": "OnRewardedShowFailed",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnRewardedAdClicked",
-        "scriptName": "OnRewardedAdClicked",
+        "id": "OnRewardedShown",
+        "scriptName": "OnRewardedShown",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnRewardedAdLoadFailed",
-        "scriptName": "OnRewardedAdLoadFailed",
+        "id": "OnRewardedLoadFailed",
+        "scriptName": "OnRewardedLoadFailed",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnRewardedAdLoaded",
-        "scriptName": "OnRewardedAdLoaded",
-        "highlight": false,
-        "isTrigger": true
+        "id": "IsRewardedAdReady",
+        "scriptName": "IsRewardedAdReady",
+        "highlight": false
       }
     ],
     "actions": [
       {
-        "id": "loadRewardedAd",
-        "scriptName": "Loadrewardedad",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "REWARDED_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
+        "id": "LoadRewardedAd",
+        "scriptName": "LoadRewardedAd",
+        "highlight": false
       },
       {
-        "id": "showRewardedAd",
-        "scriptName": "Showrewardedad",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "REWARDED_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
+        "id": "ShowRewardedAd",
+        "scriptName": "ShowRewardedAd",
+        "highlight": false
+      },
+      {
+        "id": "DestroyRewardedAd",
+        "scriptName": "DestroyRewardedAd",
+        "highlight": false
       }
     ],
     "expressions": []
@@ -192,76 +77,44 @@
         "isTrigger": true
       },
       {
-        "id": "OnInterstitialClicked",
-        "scriptName": "OnInterstitialClicked",
+        "id": "OnInterstitialShown",
+        "scriptName": "OnInterstitialShown",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnInterstitialDisplayed",
-        "scriptName": "OnInterstitialDisplayed",
+        "id": "OnInterstitialShowFailed",
+        "scriptName": "OnInterstitialShowFailed",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnInterstitialAdFailedToDisplay",
-        "scriptName": "OnInterstitialAdFailedToDisplay",
+        "id": "OnInterstitialClosed",
+        "scriptName": "OnInterstitialClosed",
         "highlight": false,
         "isTrigger": true
       },
       {
-        "id": "OnInterstitialHidden",
-        "scriptName": "OnInterstitialHidden",
-        "highlight": false,
-        "isTrigger": true
-      },
-      {
-        "id": "isInterstitialReady",
-        "scriptName": "isInterstitialReady",
-        "highlight": false,
-        "params": [
-          {
-            "id": "INTER_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
-      },
-      {
-        "id": "isRewardedAdReady",
-        "scriptName": "isRewardedAdReady",
-        "highlight": false,
-        "params": [
-          {
-            "id": "REWARDED_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
+        "id": "IsInterstitialAdReady",
+        "scriptName": "IsInterstitialAdReady",
+        "highlight": false
       }
     ],
     "actions": [
       {
-        "id": "showInterstitial",
-        "scriptName": "Showinterstitial",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "INTER_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
+        "id": "ShowInterstitialAd",
+        "scriptName": "ShowInterstitialAd",
+        "highlight": false
       },
       {
-        "id": "loadInterstitial",
-        "scriptName": "Loadinterstitial",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "INTER_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
+        "id": "LoadInterstitialAd",
+        "scriptName": "LoadInterstitialAd",
+        "highlight": false
+      },
+      {
+        "id": "DestroyInterstitialAd",
+        "scriptName": "DestroyInterstitialAd",
+        "highlight": false
       }
     ],
     "expressions": []
@@ -269,266 +122,48 @@
   "setting": {
     "conditions": [
       {
-        "id": "hasUserConsent",
-        "scriptName": "hasUserConsent",
-        "highlight": false
-      },
-      {
-        "id": "isAgeRestrictedUser",
-        "scriptName": "isAgeRestrictedUser",
-        "highlight": false
-      },
-      {
-        "id": "isDoNotSell",
-        "scriptName": "isDoNotSell",
+        "id": "HasUserConsent",
+        "scriptName": "HasUserConsent",
         "highlight": false
       }
     ],
     "actions": [
       {
-        "id": "initialize",
+        "id": "Initialize",
         "scriptName": "Initialize",
         "highlight": false,
-        "isAsync": true,
         "params": [
           {
-            "id": "SDK_KEY",
-            "type": "string"
-          }
-        ]
-      },
-      {
-        "id": "setHasUserConsent",
-        "scriptName": "Sethasuserconsent",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "consent",
-            "type": "combo",
-            "items": [
-              "true",
-              "false"
-            ],
-            "initialValue": "false"
-          }
-        ]
-      },
-      {
-        "id": "setIsAgeRestrictedUser",
-        "scriptName": "Setisagerestricteduser",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "age_restricted",
-            "type": "combo",
-            "items": [
-              "true",
-              "false"
-            ],
-            "initialValue": "false"
-          }
-        ]
-      },
-      {
-        "id": "setDoNotSell",
-        "scriptName": "Setdonotsell",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "do_not_sell",
-            "type": "combo",
-            "items": [
-              "true",
-              "false"
-            ],
-            "initialValue": "false"
-          }
-        ]
-      },
-      {
-        "id": "setVerboseLogging",
-        "scriptName": "Setverboselogging",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "condition",
-            "type": "combo",
-            "items": [
-              "true",
-              "false"
-            ],
-            "initialValue": "false"
-          }
-        ]
-      },
-      {
-        "id": "setMuted",
-        "scriptName": "setMuted",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "muted",
-            "type": "combo",
-            "items": [
-              "true",
-              "false"
-            ],
-            "initialValue": "false"
-          }
-        ]
-      },
-      {
-        "id": "showMediationDebugger",
-        "scriptName": "showMediationDebugger",
-        "highlight": false,
-        "isAsync": true
-      }
-    ],
-    "expressions": []
-  },
-  "mrec ad": {
-    "conditions": [
-      {
-        "id": "OnMRecAdExpanded",
-        "scriptName": "OnMRecAdExpanded",
-        "highlight": false,
-        "isTrigger": true
-      },
-      {
-        "id": "OnMRecAdCollapsed",
-        "scriptName": "OnMRecAdCollapsed",
-        "highlight": false,
-        "isTrigger": true
-      },
-      {
-        "id": "OnMRecAdClicked",
-        "scriptName": "OnMRecAdClicked",
-        "highlight": false,
-        "isTrigger": true
-      },
-      {
-        "id": "OnMRecAdLoadFailed",
-        "scriptName": "OnMRecAdLoadFailed",
-        "highlight": false,
-        "isTrigger": true
-      },
-      {
-        "id": "OnMRecAdLoaded",
-        "scriptName": "OnMRecAdLoaded",
-        "highlight": false,
-        "isTrigger": true
-      }
-    ],
-    "actions": [
-      {
-        "id": "createMRec",
-        "scriptName": "Createmrec",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "MREC_AD_UNIT_ID",
+            "id": "PUBLISHER_ID",
             "type": "string"
           },
           {
-            "id": "position",
+            "id": "INTERSTITIAL_ID",
+            "type": "string"
+          },
+          {
+            "id": "REWARDED_ID",
             "type": "string"
           }
         ]
       },
       {
-        "id": "showMRec",
-        "scriptName": "Showmrec",
+        "id": "SetUserConsent",
+        "scriptName": "SetUserConsent",
         "highlight": false,
-        "isAsync": true,
         "params": [
           {
-            "id": "MREC_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
-      },
-      {
-        "id": "hideMRec",
-        "scriptName": "Hidemrec",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "MREC_AD_UNIT_ID",
-            "type": "string"
-          }
-        ]
-      },
-      {
-        "id": "destroyMRec",
-        "scriptName": "Destroymrec",
-        "highlight": false,
-        "isAsync": true,
-        "params": [
-          {
-            "id": "MREC_AD_UNIT_ID",
-            "type": "string"
+            "id": "hasConsent",
+            "type": "combo",
+            "items": [
+              "true",
+              "false"
+            ],
+            "initialValue": "false"
           }
         ]
       }
     ],
     "expressions": []
-  },
-  "consentstatus": {
-    "conditions": [
-      {
-        "id": "OnConsentUnknown",
-        "scriptName": "OnConsentUnknown",
-        "highlight": false,
-        "isTrigger": true
-      },
-      {
-        "id": "OnConsentNotRequired",
-        "scriptName": "OnConsentNotRequired",
-        "highlight": false,
-        "isTrigger": true
-      },
-      {
-        "id": "OnConsentRequired",
-        "scriptName": "OnConsentRequired",
-        "highlight": false,
-        "isTrigger": true
-      }
-    ],
-    "actions": [],
-    "expressions": [
-      {
-        "id": "consent-status",
-        "expressionName": "ConsentStatus",
-        "returnType": "any"
-      },
-      {
-        "id": "countrycode",
-        "expressionName": "Countrycode",
-        "returnType": "any"
-      }
-    ]
-  },
-  "development": {
-    "conditions": [],
-    "actions": [],
-    "expressions": [
-      {
-        "id": "debuglog",
-        "expressionName": "Debuglog",
-        "returnType": "any"
-      },
-      {
-        "id": "debugevent",
-        "expressionName": "Debugevent",
-        "returnType": "any"
-      }
-    ]
   }
 }

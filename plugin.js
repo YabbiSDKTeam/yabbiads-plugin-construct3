@@ -6,10 +6,8 @@
     const PLUGIN_VERSION = "1.0.0";
     const PLUGIN_CATEGORY = "monetisation";
 
-    const PLUGIN_CLASS = SDK.Plugins.yabbi = class yabbiPlugin extends SDK.IPluginBase
-    {
-        constructor()
-        {
+    const PLUGIN_CLASS = SDK.Plugins.yabbi = class yabbiPlugin extends SDK.IPluginBase {
+        constructor() {
             super(PLUGIN_ID);
 
             SDK.Lang.PushContext("plugins." + PLUGIN_ID.toLowerCase());
@@ -27,14 +25,16 @@
 
             SDK.Lang.PushContext(".properties");
             this._info.SetProperties([
-                new SDK.PluginProperty("text", "sdk-key", ""),
+                new SDK.PluginProperty("text", "publisher-id", ""),
+                new SDK.PluginProperty("text", "interstitial-id", ""),
+                new SDK.PluginProperty("text", "rewarded-id", ""),
             ]);
 
 
             this._info.AddCordovaPluginReference(
-            {
-                id: "cordova.plugin.yabbiads"
-            });
+                {
+                    id: "cordova.plugin.yabbiads"
+                });
 
 
             SDK.Lang.PopContext(); //.properties

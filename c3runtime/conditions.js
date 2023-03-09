@@ -1,159 +1,61 @@
 "use strict";
 {
     self.C3.Plugins.yabbi.Cnds = {
-        OnBannerAdLoaded()
-        {
+
+        OnRewardedLoaded() {
             return true;
         },
 
-        OnBannerAdLoadFailed()
-        {
+        OnRewardedClosed() {
             return true;
         },
 
-        OnBannerAdClicked()
-        {
+        OnRewardedFinished() {
             return true;
         },
 
-        OnBannerAdCollapsed()
-        {
+        OnRewardedShowFailed() {
             return true;
         },
 
-        OnBannerAdExpanded()
-        {
+        OnRewardedShown() {
             return true;
         },
 
-        OnRewardedAdReceivedReward()
-        {
+        OnRewardedLoadFailed() {
             return true;
         },
 
-        OnRewardedAdHidden()
-        {
+        OnInterstitialLoaded() {
             return true;
         },
 
-        OnRewardedAdFailedToDisplay()
-        {
+        OnInterstitialLoadFailed() {
             return true;
         },
 
-        OnRewardedAdDisplayed()
-        {
+        OnInterstitialShown() {
             return true;
         },
 
-        OnRewardedAdClicked()
-        {
+        OnInterstitialShowFailed() {
             return true;
         },
 
-        OnRewardedAdLoadFailed()
-        {
+        OnInterstitialClosed() {
             return true;
         },
 
-        OnRewardedAdLoaded()
-        {
-            return true;
+        IsInterstitialAdReady() {
+            return this._isInterstitialAdReady();
         },
 
-        OnInterstitialLoaded()
-        {
-            return true;
+        IsRewardedAdReady() {
+            return this._isRewardedAdReady();
         },
 
-        OnInterstitialLoadFailed()
-        {
-            return true;
-        },
-
-        OnInterstitialClicked()
-        {
-            return true;
-        },
-
-        OnInterstitialDisplayed()
-        {
-            return true;
-        },
-
-        OnInterstitialAdFailedToDisplay()
-        {
-            return true;
-        },
-
-        OnInterstitialHidden()
-        {
-            return true;
-        },
-
-        isInterstitialReady(INTER_AD_UNIT_ID)
-        {
-            return this._isInterstitialReady(INTER_AD_UNIT_ID);
-        },
-
-        isRewardedAdReady(REWARDED_AD_UNIT_ID)
-        {
-            return this._isRewardedAdReady(REWARDED_AD_UNIT_ID);
-        },
-
-        OnMRecAdExpanded()
-        {
-            return true;
-        },
-
-        OnMRecAdCollapsed()
-        {
-            return true;
-        },
-
-        OnMRecAdClicked()
-        {
-            return true;
-        },
-
-        OnMRecAdLoadFailed()
-        {
-            return true;
-        },
-
-        OnMRecAdLoaded()
-        {
-            return true;
-        },
-
-        OnConsentUnknown()
-        {
-            return true;
-        },
-
-        OnConsentNotRequired()
-        {
-            return true;
-        },
-
-        OnConsentRequired()
-        {
-            return true;
-        },
-
-        hasUserConsent()
-        {
+        HasUserConsent() {
             return this._hasUserConsent();
-        },
-
-        isAgeRestrictedUser()
-        {
-            return this._isAgeRestrictedUser();
-        },
-
-        isDoNotSell()
-        {
-            return this._isDoNotSell();
         }
     };
 }

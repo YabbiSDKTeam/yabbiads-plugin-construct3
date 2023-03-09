@@ -1,84 +1,37 @@
 "use strict";
 {
     self.C3.Plugins.yabbi.Acts = {
-        async Setbannerbackgroundcolor(BANNER_AD_UNIT_ID, backgroundColor)
-        {
+
+        LoadInterstitialAd() {
+            this._loadInterstitialAd();
         },
 
-        async Createbanner(BANNER_AD_UNIT_ID, position)
-        {
+        ShowInterstitialAd() {
+            this._showInterstitialAd();
         },
 
-        async Hidebanner(BANNER_AD_UNIT_ID)
-        {
+        DestroyInterstitialAd() {
+            this._destroyInterstitialAd();
         },
 
-        async Showbanner(BANNER_AD_UNIT_ID)
-        {
+        LoadRewardedAd() {
+            this._loadRewardedAd();
         },
 
-        async Loadrewardedad(REWARDED_AD_UNIT_ID)
-        {
+        ShowRewardedAd() {
+            this._showRewardedAd();
         },
 
-        async Showrewardedad(REWARDED_AD_UNIT_ID)
-        {
+        DestroyRewardedAd() {
+            this._destroyRewardedAd();
         },
 
-        async Showinterstitial(INTER_AD_UNIT_ID)
-        {
+        Initialize(PUBLISHER_ID, INTERSTITIAL_ID, REWARDED_ID) {
+            this._initialize(PUBLISHER_ID, INTERSTITIAL_ID, REWARDED_ID);
         },
 
-        async Loadinterstitial(INTER_AD_UNIT_ID)
-        {
-        },
-
-        async Initialize(SDK_KEY)
-        {
-        },
-
-        async Sethasuserconsent(consent)
-        {
-        },
-
-        async Setisagerestricteduser(age_restricted)
-        {
-        },
-
-        async Setdonotsell(do_not_sell)
-        {
-        },
-
-        async Createmrec(MREC_AD_UNIT_ID, position)
-        {
-        },
-
-        async Showmrec(MREC_AD_UNIT_ID)
-        {
-        },
-
-        async Hidemrec(MREC_AD_UNIT_ID)
-        {
-        },
-
-        async Destroybanner(BANNER_AD_UNIT_ID)
-        {
-        },
-
-        async Destroymrec(MREC_AD_UNIT_ID)
-        {
-        },
-
-        async Setverboselogging(condition)
-        {
-        },
-
-        async setMuted(muted)
-        {
-        },
-
-        async showMediationDebugger()
-        {
+        SetUserConsent(hasConsent) {
+            this._setUserConsent(hasConsent);
         }
     };
 }

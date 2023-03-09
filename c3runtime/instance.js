@@ -2,128 +2,166 @@
 {
     const C3 = self.C3;
 
-    C3.Plugins.yabbi.Instance = class yabbiInstance extends C3.SDKInstanceBase
-    {
-        constructor(inst, properties)
-        {
+    C3.Plugins.yabbi.Instance = class yabbiInstance extends C3.SDKInstanceBase {
+        constructor(inst, properties) {
             super(inst);
 
-            if (typeof cordova == 'undefined')
-            {
+            this.publisher_id = "";
+            this.interstitial_id = "";
+            this.rewarded_id = "";
+
+            if (typeof cordova == 'undefined') {
                 return;
             }
-            else
-            {};
+            else { };
 
             this.Conditions = C3.Plugins.yabbi.Cnds;
-            this.YabbiAds = cordova.require('cordova.plugin.yabbiads');
+            this.YabbiAds = cordova.require('cordova.plugin.yabbiads.YabbiAdsPlugin');
 
-            if (properties)
-            {
-                this.sdkKey = properties[0];
+            if (properties) {
+                this.publisher_id = properties[0];
+                this.interstitial_id = properties[1];
+                this.rewarded_id = properties[2];
             }
 
 
-            if (typeof this.YabbiAds == 'undefined')
-            {
+            if (typeof this.YabbiAds == 'undefined') {
                 return;
             }
-            else
-            {};
+            else { };
 
             const self = this;
 
-            /////////////////////////////////////
-            ////// Methods
+            const AdType = {
+                INTERSTITIAL: 1, // Interstitial Ad
+                REWARDED: 3, // Rewarded Ad
+            };
+
+
+            // Methods
 
             // Settings
-           
-            const _initialize = async(sdkKey) => {
-               
+            const _initialize = (PUBLISHER_ID, INTERSTITIAL_ID, REWARDED_ID) => {
+
+                var isInitialized = self.YabbiAds.isInitialized();
+
+                if (!isInitialized) {
+                    self.publisher_id = PUBLISHER_ID;
+                    self.interstitial_id = INTERSTITIAL_ID;
+                    self.rewarded_id = REWARDED_ID;
+                    self.YabbiAds.initialize(self.publisher_id, self.interstitial_id, self.rewarded_id);
+                }
             }
 
             // Privacy Methods
 
-            //If the user consents, set the user consent flag to true
-            const _setHasUserConsent = async(consent) => {
-             
+            const _setUserConsent = (hasConsent) => {
+                self.YabbiAds.setUserConsent(hasConsent);
             }
+
             const _hasUserConsent = () => {
+                return self.YabbiAds.hasUserConsent();
             };
 
             // Ads Methods
-            const _loadInterstitial = async(INTER_AD_UNIT_ID) => {
-                
+            const _loadInterstitialAd = () => {
+                self.YabbiAds.loadAd(AdType.INTERSTITIAL);
             }
-            const _showInterstitial = async(INTER_AD_UNIT_ID) => {
-               
+            const _showInterstitialAd = () => {
+                self.YabbiAds.showAd(AdType.INTERSTITIAL);
             }
-            const _isInterstitialReady = (INTER_AD_UNIT_ID) => {
-               
+            const _isInterstitialAdReady = () => {
+                return self.YabbiAds.canLoadAd(AdType.INTERSTITIAL);
+            }
+            const _destroyInterstitialAd = () => {
+                self.YabbiAds.destroyAd(AdType.INTERSTITIAL);
+            }
+            const _loadRewardedAd = () => {
+                self.YabbiAds.loadAd(AdType.REWARDED);
+            }
+            const _showRewardedAd = () => {
+                self.YabbiAds.showAd(AdType.REWARDED);
+            }
+            const _destroyRewardedAd = () => {
+                self.YabbiAds.destroyAd(AdType.REWARDED);
+            }
+            const _isRewardedAdReady = () => {
+                return self.YabbiAds.canLoadAd(AdType.REWARDED);
             }
 
-            const _loadRewardedAd = async(REWARDED_AD_UNIT_ID) => {
-               
-            }
-            const _showRewardedAd = async(REWARDED_AD_UNIT_ID) => {
-               
-            }
-            const _isRewardedAdReady = (REWARDED_AD_UNIT_ID) => {
-               
-            }
 
-
-            /////////////////////////////////////
             // Register Methods
-
             this._initialize = _initialize;
-            this._setHasUserConsent = _setHasUserConsent;
+            this._setUserConsent = _setUserConsent;
             this._hasUserConsent = _hasUserConsent;
-            this._loadInterstitial = _loadInterstitial;
-            this._showInterstitial = _showInterstitial;
-            this._isInterstitialReady = _isInterstitialReady;
+            this._loadInterstitialAd = _loadInterstitialAd;
+            this._showInterstitialAd = _showInterstitialAd;
+            this._isInterstitialAdReady = _isInterstitialAdReady;
             this._loadRewardedAd = _loadRewardedAd;
             this._showRewardedAd = _showRewardedAd;
+            this._destroyInterstitialAd = _destroyInterstitialAd;
+            this._destroyRewardedAd = _destroyRewardedAd;
             this._isRewardedAdReady = _isRewardedAdReady;
 
 
-            /////////////////////////////////////
             // Register Trigger Events
 
-            globalThis.addEventListener('OnInterstitialLoadedEvent', async(adInfo) => {
+            // Interstitial Ad
+            globalThis.addEventListener('onInterstitialLoaded', (adInfo) => {
                 self.Trigger(self.Conditions.OnInterstitialLoaded);
+            });
+            globalThis.addEventListener('onInterstitialLoadFailed', (adInfo) => {
+                self.Trigger(self.Conditions.OnInterstitialLoadFailed);
+            });
+            globalThis.addEventListener('onInterstitialShown', (adInfo) => {
+                self.Trigger(self.Conditions.OnInterstitialShown);
+            });
+            globalThis.addEventListener('onInterstitialShowFailed', (adInfo) => {
+                self.Trigger(self.Conditions.OnInterstitialShowFailed);
+            });
+            globalThis.addEventListener('onInterstitialClosed', (adInfo) => {
+                self.Trigger(self.Conditions.OnInterstitialClosed);
+            });
+
+            // Rewarded Ad
+            globalThis.addEventListener('onRewardedLoaded', (adInfo) => {
+                self.Trigger(self.Conditions.OnRewardedLoaded);
+            });
+            globalThis.addEventListener('onRewardedLoadFailed', (adInfo) => {
+                self.Trigger(self.Conditions.OnRewardedLoadFailed);
+            });
+            globalThis.addEventListener('onRewardedShown', (adInfo) => {
+                self.Trigger(self.Conditions.OnRewardedShown);
+            });
+            globalThis.addEventListener('onRewardedShowFailed', (adInfo) => {
+                self.Trigger(self.Conditions.OnRewardedShowFailed);
+            });
+            globalThis.addEventListener('onRewardedClosed', (adInfo) => {
+                self.Trigger(self.Conditions.OnRewardedClosed);
+            });
+            globalThis.addEventListener('onRewardedFinished', (adInfo) => {
+                self.Trigger(self.Conditions.OnRewardedFinished);
             });
         }
 
-        /////////////////////////////////////
-
-        Release()
-        {
+        Release() {
             super.Release();
         }
 
-        SaveToJson()
-        {
-            return {
-                // data to be saved for savegames
-            };
+        SaveToJson() {
+            return {};
         }
 
-        LoadFromJson(o)
-        {
-            // load state for savegames
-        }
+        LoadFromJson(o) { }
 
 
-        GetDebuggerProperties()
-        {
+        GetDebuggerProperties() {
             return [
-            {
-                title: "yabbiads",
-                properties: [
-                    //{name: ".current-animation",	value: this._currentAnimation.GetName(),	onedit: v => this.CallAction(Acts.SetAnim, v, 0) },
-                ]
-            }];
+                {
+                    title: "Yabbiads",
+                    properties: []
+                }
+            ];
         }
     };
 }
