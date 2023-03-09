@@ -16,7 +16,7 @@
             else { };
 
             this.Conditions = C3.Plugins.yabbi.Cnds;
-            this.YabbiAds = cordova.require('cordova.plugin.yabbiads');
+            this.YabbiAds = cordova.require('cordova.plugin.yabbiads.YabbiAdsPlugin');
 
             if (properties) {
                 this.publisher_id = properties[0];
@@ -43,50 +43,50 @@
             // Settings
             const _initialize = (PUBLISHER_ID, INTERSTITIAL_ID, REWARDED_ID) => {
 
-                var isInitialized = YabbiAds.isInitialized();
+                var isInitialized = self.YabbiAds.isInitialized();
 
                 if (!isInitialized) {
                     self.publisher_id = PUBLISHER_ID;
                     self.interstitial_id = INTERSTITIAL_ID;
                     self.rewarded_id = REWARDED_ID;
-                    YabbiAds.initialize(publisher_id, interstitial_id, rewarded_id);
+                    self.YabbiAds.initialize(self.publisher_id, self.interstitial_id, self.rewarded_id);
                 }
             }
 
             // Privacy Methods
 
             const _setUserConsent = (hasConsent) => {
-                YabbiAds.setUserConsent(hasConsent);
+                self.YabbiAds.setUserConsent(hasConsent);
             }
 
             const _hasUserConsent = () => {
-                return YabbiAds.hasUserConsent();
+                return self.YabbiAds.hasUserConsent();
             };
 
             // Ads Methods
             const _loadInterstitialAd = () => {
-                YabbiAds.loadAd(AdType.INTERSTITIAL);
+                self.YabbiAds.loadAd(AdType.INTERSTITIAL);
             }
             const _showInterstitialAd = () => {
-                YabbiAds.showAd(AdType.INTERSTITIAL);
+                self.YabbiAds.showAd(AdType.INTERSTITIAL);
             }
             const _isInterstitialAdReady = () => {
-                return YabbiAds.canLoadAd(AdType.INTERSTITIAL);
+                return self.YabbiAds.canLoadAd(AdType.INTERSTITIAL);
             }
             const _destroyInterstitialAd = () => {
-                YabbiAds.destroyAd(AdType.INTERSTITIAL);
+                self.YabbiAds.destroyAd(AdType.INTERSTITIAL);
             }
             const _loadRewardedAd = () => {
-                YabbiAds.loadAd(AdType.REWARDED);
+                self.YabbiAds.loadAd(AdType.REWARDED);
             }
             const _showRewardedAd = () => {
-                YabbiAds.showAd(AdType.REWARDED);
+                self.YabbiAds.showAd(AdType.REWARDED);
             }
             const _destroyRewardedAd = () => {
-                YabbiAds.destroyAd(AdType.REWARDED);
+                self.YabbiAds.destroyAd(AdType.REWARDED);
             }
             const _isRewardedAdReady = () => {
-                return YabbiAds.canLoadAd(AdType.REWARDED);
+                return self.YabbiAds.canLoadAd(AdType.REWARDED);
             }
 
 
