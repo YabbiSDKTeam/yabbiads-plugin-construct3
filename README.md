@@ -12,6 +12,7 @@
 Используйте наше [демо приложение](https://github.com/YabbiSDKTeam/yabbiads-plugin-construct3/tree/master/example) в качестве примера. 
 
 ## Установка SDK
+Ознакомьтесь с плагином на странице в [магазине Construct 3](https://www.construct.net/en/make-games/addons/942/yabbiads).
 
 Установите плагин в ваш проект. Для этого скачайте аддон по [ссылке](https://www.construct.net/make-games/addons/942/yabbiads/1-0-0-1014/yabbiads-1.0.0-stable.c3addon).
 
@@ -104,11 +105,32 @@
     * `OnRewardedClosed` - вызывается когда реклама была закрыта пользователем.
     * `OnRewardedFinished` - вызывается когда реклама закончилось.
 
-## Подготовьте ваше приложение к публикации
+## Подготовьте ваше iOS приложение к публикации
+
+Для более эффективного таргетинга рекламы вы можете добавить в свой `Info.plist` проекта следующие ключи:
+
+`NSUserTrackingUsageDescription` - Начиная с iOS 14 использование IDFA требует разрешения от пользователя. Добавление описания поможет объяснить пользователю необходимость данного разрешения.
+
+`NSLocationWhenInUseUsageDescription` - Необходимо добавлять если в вашем приложении можно использовать данные геолокации.
+
+В файле `Info.plist` нажмите `Add+` в любом поле первой колонки.
+Добавьте `Privacy - Tracking Usage Description`. В качестве его типа во второй колонке выберите `String`. Добавьте описание, которое поможет пользователю понять для чего необходимо разрешение.
+
+Нажмите `Add+` в конце строки `Privacy - Location When In Use Usage Description`. В качестве его типа во второй колонке выберите `String`. Добавьте описание, которое поможет пользователю понять для чего необходимо разрешение.
+
+Вы можете добавить ключ непосредственно в файл `Info.plist` с помощью следующего кода:
+
+```plist
+<key>NSUserTrackingUsageDescription</key>
+<string>We need this permission for better ad targetting</string>
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>We need this permission for better ad targetting</string>
+```
+
+
+## Подготовьте ваше Android приложение к публикации
 
 В соответствии с [политикой Google](https://support.google.com/googleplay/android-developer/answer/9857753?hl=ru), разрешения на определения местоположения могут запрашиваться только для функций, имеющих отношение к основному функционалу приложения. Вы не можете запрашивать доступ к данным о местоположении исключительно с целью предоставления рекламы или аналитики.
-
-
 
 **Если вы не используете местоположения как одну из основных функций вашего приложения:**
 * Удалите следующий код из AndroidManifest.xml вашего приложения:
